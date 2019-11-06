@@ -1,0 +1,8 @@
+package com.geek14.webcodingchallenge.resources;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserResource {
+
+}

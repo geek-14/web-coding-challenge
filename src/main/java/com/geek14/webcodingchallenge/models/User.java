@@ -1,17 +1,30 @@
 package com.geek14.webcodingchallenge.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class User {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
 	private String email;
 	
 	private String password;
+	
+	@OneToOne
+	private Position position;
 
-	public User(String email, String password) {
+	public User(String email, String password, Position position) {
 		super();
 		this.email = email;
 		this.password = password;
+		this.position = position;
 	}
 
 	public Integer getId() {
@@ -36,6 +49,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
 	}
 	
 	
