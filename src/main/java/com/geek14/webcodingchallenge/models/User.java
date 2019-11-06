@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -17,7 +18,7 @@ public class User {
 	
 	private String password;
 	
-	@OneToOne
+	@ManyToOne
 	private Position position;
 
 	public User(String email, String password, Position position) {

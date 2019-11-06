@@ -20,7 +20,7 @@ public class Shop {
 	
 	private Boolean liked;
 	
-	@OneToOne
+	@ManyToOne
 	private Position position;
 	
 	@ManyToOne
