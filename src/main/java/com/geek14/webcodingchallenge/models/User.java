@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
 public class User {
@@ -20,6 +19,12 @@ public class User {
 	
 	@ManyToOne
 	private Position position;
+	
+	
+
+	public User() {
+		
+	}
 
 	public User(String email, String password, Position position) {
 		super();
@@ -60,6 +65,9 @@ public class User {
 		this.position = position;
 	}
 	
-	
+	 @Override
+	    public String toString() {
+	        return "id[" + this.id + "] email[" + this.email + "]";
+	    }
 
 }

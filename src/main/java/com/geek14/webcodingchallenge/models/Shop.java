@@ -5,9 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-
-import org.hibernate.annotations.ManyToAny;
 
 @Entity
 public class Shop {
@@ -25,6 +22,10 @@ public class Shop {
 	
 	@ManyToOne
 	private User user;
+
+	public Shop() {
+
+	}
 
 	public Shop(String name, Boolean liked, Position position) {
 		super();
